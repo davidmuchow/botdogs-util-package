@@ -1,4 +1,4 @@
-package frc.robot.util;
+package org.botdogs.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +12,8 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import frc.robot.Constants.UTIL_CONSTANTS.CAMERA_DEFAULTS.*;
-import frc.robot.util.widgets.BooleanWidget;
-import frc.robot.util.widgets.NumberSliderWidget;
+import org.botdogs.misc.Constants.UTIL_CONSTANTS.CAMERA_DEFAULTS.*;
+import org.botdogs.util.widgets.*;
 
 public class CameraNetworkTable {
     public static TreeMap<String, CameraNetworkTable> CameraList = new TreeMap<String, CameraNetworkTable>();

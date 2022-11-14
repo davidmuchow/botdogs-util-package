@@ -1,4 +1,4 @@
-package frc.robot.util;
+package org.botdogs.util.PIDTuner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,11 +15,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 import edu.wpi.first.wpilibj.shuffleboard.SuppliedValueWidget;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import edu.wpi.first.wpilibj2.command.WaitCommand;
-import frc.robot.commands.TalonPIDBenchmarker;
 
 public class PIDTunerTalon {
     WPI_TalonFX tuning_motor;
@@ -249,12 +245,8 @@ public class PIDTunerTalon {
             if (sus_mode && !bench_on && event.getEntry().getBoolean(true)) {
                 bench_on = true;
                 new ParallelCommandGroup(
-                    new TalonPIDBenchmarker(this, tuning_motor, benchWidget, time_to_threshold_reporter),
-                    new SequentialCommandGroup(
-                        new WaitCommand(3), // .141 seconds off on test 1
-                        new InstantCommand(() -> tuning_motor.getSimCollection().setIntegratedSensorVelocity((int)(2000 * CONVERSION_RATE)))
-                    )
-                ).schedule();
+                    new TalonPIDBenchmarker(this, tuning_motor, benchWidget, time_to_threshold_reporter))
+                .execute();
             } else if (sus_mode && bench_on && !event.getEntry().getBoolean(false)) {
                 benchWidget.getEntry().setBoolean(true);
             } else {

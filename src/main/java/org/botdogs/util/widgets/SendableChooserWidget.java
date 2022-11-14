@@ -1,4 +1,4 @@
-package frc.robot.util.widgets;
+package org.botdogs.util.widgets;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.ComplexWidget;

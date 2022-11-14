@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot;
+package org.botdogs.misc;
 
 import java.util.HashMap;
 
@@ -22,9 +22,6 @@ public final class Constants {
                 "720P",
                 "SXGA",
                 "SVCD"
-            };
-            public static final String[] FILTERS = {
-                "no_filter"
             };
             public static final String[] PTZ_TYPES = {
                 "free_mode",
@@ -55,7 +52,6 @@ public final class Constants {
 
                     DEFAULT_STRING_MAP = new HashMap<String, String[]>();
                     DEFAULT_STRING_MAP.put("resolution", OPTIONS.RESOLUTIONS);
-                    DEFAULT_STRING_MAP.put("opencv_filter", OPTIONS.FILTERS);
                     DEFAULT_STRING_MAP.put("ptz_type", OPTIONS.PTZ_TYPES);
                     DEFAULT_STRING_MAP.put("auto_position_preset", OPTIONS.PRESET_POSITIONS);
 
